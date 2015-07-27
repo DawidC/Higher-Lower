@@ -27,7 +27,10 @@ public class HigherLower {
                 int liczba = 0;
                 int wynik = 0;
                 int liczbaZyc = 0;
+                int licznik = 0;
                 Random generator = new Random();
+                int liczbaR = 0;
+                int flaga = 0;
                 switch(menu2){
 
                     case 1:
@@ -38,30 +41,70 @@ public class HigherLower {
                                 iloscBledow = 3;
 
                                 while(iloscBledow>liczbaZyc){
-                                    int liczbaR = generator.nextInt(10);
-                                    liczbaR++;
+                                    if(licznik == 0){
+                                        liczbaR = generator.nextInt(10);
+                                        liczbaR++;
+                                        licznik++;
+                                    }
                                     for(int i = 0;i<50;i++){
                                         System.out.println();
                                     }
+                                    if(flaga==2){
+                                        iloscBledow--;
+                                    }
+                                    System.out.println("Wynik: " + wynik);
                                     System.out.print("Szanse: ");
                                     for(int i = 0;i<iloscBledow;i++){
                                         System.out.print("X ");
                                     }
+
                                     System.out.println();
+                                    if(flaga == 1){
+                                        System.out.print("Dobrze! ");
+                                    } else if(flaga == 2){
+                                        System.out.print("Źle! ");
+                                    }
                                     System.out.print("Liczba: ");
                                     System.out.print(liczbaR);
+                                    if(iloscBledow==0){
+                                        System.out.println(" Przegrałeś!");
+                                        System.out.println("Twój wynik końcowy to " + wynik + " pkt.");
+                                        System.exit(69);
+                                    }
                                     System.out.print(". Następna liczba będzie: 1.Mniejsza, 2.Większa. : ");
                                     int ltmp = sc.nextInt();
                                     if(ltmp == 1){
-
+                                        int liczbaTmp = liczbaR;
+                                        liczbaR = generator.nextInt(10);
+                                        liczbaR++;
+                                        if(liczbaTmp==liczbaR){
+                                            liczbaR = generator.nextInt(10);
+                                            liczbaR++;
+                                        }
+                                        if(liczbaTmp > liczbaR){
+                                            flaga = 1;
+                                            wynik = wynik + 10;
+                                        } else {
+                                            flaga = 2;
+                                        }
                                     } else if(ltmp == 2){
-
+                                        int liczbaTmp = liczbaR;
+                                        liczbaR = generator.nextInt(10);
+                                        liczbaR++;
+                                        if(liczbaTmp==liczbaR){
+                                            liczbaR = generator.nextInt(10);
+                                            liczbaR++;
+                                        }
+                                        if(liczbaTmp < liczbaR){
+                                            flaga = 1;
+                                            wynik = wynik + 10;
+                                        } else {
+                                            flaga = 2;
+                                        }
                                     } else {
                                         System.out.println("ZŁY Wybór!!!");
                                         break;
                                     }
-
-
                                 }
 
                         break;
