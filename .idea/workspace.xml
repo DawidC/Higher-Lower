@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffb0db16-3e2d-4026-b114-84c052388e95" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Higher-Lower/HigherLower.class" afterPath="$PROJECT_DIR$/out/production/Higher-Lower/HigherLower.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HigherLower.java" afterPath="$PROJECT_DIR$/src/HigherLower.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Higher-Lower.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +29,8 @@
       <file leaf-file-name="HigherLower.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/HigherLower.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37093276">
-              <caret line="85" column="63" selection-start-line="85" selection-start-column="63" selection-end-line="85" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.9023861">
+              <caret line="267" column="22" selection-start-line="267" selection-start-column="22" selection-end-line="267" selection-end-column="22" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -396,8 +398,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HigherLower.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37093276">
-          <caret line="85" column="63" selection-start-line="85" selection-start-column="63" selection-end-line="85" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.9023861">
+          <caret line="267" column="22" selection-start-line="267" selection-start-column="22" selection-end-line="267" selection-end-column="22" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />

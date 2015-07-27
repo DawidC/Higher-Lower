@@ -188,11 +188,83 @@ public class HigherLower {
                 break;
 
             case 2:
+                liczbaZyc = 0;
+                generator = new Random();
                 for(int i = 0; i<100;i++){
                     System.out.println();
                 }
                 System.out.println("2.Karty.");
+                System.out.println("W talii kart mamy 13 różnych kart (figur). Na początku zostanie wylosowana jedna\n" +
+                                   "karta i Twoim zadaniem będzie zgadnąć, czy następna karta będzie lepsza czy też \n" +
+                                   "słabsza. Za każdą prawidłową odpowiedź otrzymasz +10 pkt. Za każdą złą stracisz\n" +
+                                   "jedną szansę, których na początku masz 3. Powodzenia! :)");
+                int iloscSzans = 3;
+                licznik = 1;
+                liczbaR=0;
+                wynik = 0;
+                // karty 2,3,4,5,6,7,8,9,10,walet,dama,król,as
+                while(iloscSzans>liczbaZyc){
+                    if(licznik == 1){
+                        liczbaR = generator.nextInt(13);
+                        liczbaR++;
+                        licznik++;
+                    }
+                    int liczbaTmp = liczbaR;
+                    System.out.print("Szanse: ");
+                    for(int i = 0;i<iloscSzans;i++){
+                        System.out.print("X ");
+                    }
+                    System.out.println();
+                    System.out.println("Wynik " + wynik);
+                    if(liczbaR==11){
+                        System.out.print("Wylosowałeś waleta. ");
+                    } else if(liczbaR==12){
+                        System.out.print("Wylosowałeś damę. ");
+                    } else if(liczbaR==13){
+                        System.out.print("Wylosowałeś króla. ");
+                    } else if(liczbaR==14){
+                        System.out.print("Wylosowałeś asa. ");
+                    } else {
+                        System.out.print("Wylosowałeś kartę z nr ");
+                        System.out.print(liczbaR++);
+                    }
+                    System.out.print(" Następna karta będzie: 1.Mniejsza, 2.Większa : ");
+                    int wybor = sc.nextInt();
 
+                    switch (wybor){
+                        case 1:
+                            liczbaR = generator.nextInt(13);
+                            liczbaR++;
+                            if(liczbaTmp==liczbaR){
+                                liczbaR = generator.nextInt(13);
+                                liczbaR++;
+                            }
+                            if(liczbaTmp > liczbaR){
+                                wynik=wynik+10;
+                                System.out.print("Dobrze! ");
+                            } else if(liczbaTmp < liczbaR){
+                                System.out.print("Źle! ");
+                                iloscSzans--;
+                            }
+                            break;
+                        case 2:
+                            liczbaR = generator.nextInt(13);
+                            liczbaR++;
+                            if(liczbaTmp==liczbaR){
+                                liczbaR = generator.nextInt(13);
+                                liczbaR++;
+                            }
+                            if(liczbaTmp < liczbaR){
+                                System.out.print("Dobrze! ");
+                                wynik=wynik+10;
+                            } else if(liczbaTmp > liczbaR){
+                                System.out.print("Źle! ");
+                                iloscSzans--;
+                            }
+                            break;
+                    }
+                }
+                System.out.println("Przegrałeś! Twój wynik to: " + wynik + " pkt");
                 break;
 
             case 3:
@@ -201,3 +273,4 @@ public class HigherLower {
 
     }
 }
+
